@@ -2,7 +2,7 @@ name: Docker Image CI
 
 on:
   push:
-    branches: [master]
+    branches: [main]
 
 jobs:
   build:
@@ -15,5 +15,5 @@ jobs:
           username: ${{ secrets.ACR_USERNAME }}
           password: ${{ secrets.ACR_PASSWORD }}
     - run: |
-          docker build . -t helixrepo.azurecr.io/helix_build:latest
-          docker push helixrepo.azurecr.io/helix_push:latest
+          docker build . -t helixrepo.azurecr.io/helixrepo:latest
+          docker push helixrepo.azurecr.io/helixrepo:latest
